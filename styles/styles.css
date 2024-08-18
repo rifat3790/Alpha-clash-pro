@@ -8,3 +8,17 @@
 .font-anton{
     font-family: 'Anton', sans-serif;
 }
+
+.kbd{
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+/* .kbd:hover {
+    background-color: #FFA500;
+} */
