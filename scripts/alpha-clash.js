@@ -45,7 +45,6 @@ function handleKeyboardButtonPress(event){
         setTextContentById('life', lifeElement);
         if(lifeElement === 0){
             // game over
-            alert('Game Over!');
             gameOver();
             
         }
@@ -74,6 +73,12 @@ function play(){
     hideElementById('home-screen');
     hideElementById('final-score');
     showElementById('play-ground');
+
+    // reset score and life
+    setTextContentById('score', 0);
+    setTextContentById('life', 3);
+
+
     continueGame();
     
 }
@@ -81,7 +86,14 @@ function play(){
 function gameOver(){
     hideElementById('play-ground');
     showElementById('final-score');
-    setTextContentById('total-score', newScore)
-    removeBackgroundColorById(currentAlphabetElement);
-    setTextContentById('life', 3);
+    const totalScore = getTextContentById('score');
+    console.log('Total score:', totalScore);
+    setTextContentById('total-score', totalScore)
+
+    // clear the last selected background color
+    // const lastSelectedElement = document.querySelector('.bg-orange-400');
+    // lastSelectedElement.classList.remove('bg-orange-400');
+    const alphabet = document.getElementById('current-alphabet').innerText;
+    removeBackgroundColorById(alphabet)
+    
 }
