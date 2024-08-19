@@ -56,18 +56,38 @@ function handleKeyboardButtonPress(event){
 
 document.addEventListener('keypress', handleKeyboardButtonPress);
 
+// function continueGame(){
+//     // step-1: generate a random letter
+//     const alphabet = getARandomLetter();
+//     console.log('Random letter:', alphabet);
+
+//     // set random letter to the display area
+//     const currentAlphabetElement = document.getElementById('current-alphabet');
+//     currentAlphabetElement.textContent = alphabet;
+
+//     // set background color
+//     addBackgroundColorById(alphabet)
+// }
 function continueGame(){
     // step-1: generate a random letter
     const alphabet = getARandomLetter();
     console.log('Random letter:', alphabet);
+
+    // Check if the element for the generated letter exists
+    const elementExists = document.getElementById(alphabet);
+    if (!elementExists) {
+        console.error(`No key found for letter: ${alphabet}`);
+        return; // Exit the function if no corresponding element exists
+    }
 
     // set random letter to the display area
     const currentAlphabetElement = document.getElementById('current-alphabet');
     currentAlphabetElement.textContent = alphabet;
 
     // set background color
-    addBackgroundColorById(alphabet)
+    addBackgroundColorById(alphabet);
 }
+
 
 function play(){
     hideElementById('home-screen');

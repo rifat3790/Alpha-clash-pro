@@ -16,8 +16,13 @@ function showElementById(elementId){
 
 function addBackgroundColorById(elementId){
     const element = document.getElementById(elementId);
-    element.classList.add('bg-orange-400');
+    if (element) {
+        element.classList.add('bg-orange-400');
+    } else {
+        console.error(`Element with ID "${elementId}" not found.`);
+    }
 }
+
 function removeBackgroundColorById(elementId){
     const element = document.getElementById(elementId);
     element.classList.remove('bg-orange-400');
