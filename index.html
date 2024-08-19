@@ -87,12 +87,12 @@
                 <button class="btn px-6 text-white bg-[#894189] rounded-full">
                   Life
                   <i class="fa-solid fa-heart-pulse" style="color: #ffffff;"></i>
-                  <span>1</span>
+                  <span id="life">3</span>
                 </button>
                 <button class="btn px-6 text-white bg-[#360490] rounded-full">
                   Score
                   <i class="fa-solid fa-comment-dollar" style="color: #ffffff;"></i>
-                  <span>1</span>
+                  <span id="score">0</span>
                 </button>
                </div>
 
@@ -100,14 +100,15 @@
       </section>
 
       <!-- final score start -->
-      <section class="score flex flex-col justify-center items-center min-h-screen hidden">
+      <section id="final-score" class=" flex flex-col justify-center items-center min-h-screen hidden">
         <div class="text-white text-center space-y-8 bg-gradient-to-r from-[#989797] to-[#FFFFFF8F] px-12 py-10 rounded-xl opacity-80">
+          <h1 class="text-3xl">Game Over !!!!</h1>
           <h1 class="text-8xl">
             <span class="font-extrabold">Score:</span>
-            14
+            <span id="total-score"></span>
           </h1>
 
-          <button class="btn ">Play Again</button>
+          <button class="btn " onclick="play()">Play Again</button>
           <p>Practice will make you Pro</p>
         </div>
       </section>
